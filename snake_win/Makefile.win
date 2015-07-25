@@ -1,0 +1,69 @@
+# Project: snake
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = crea_lista_pos.o destra.o down.o draw_snake.o fiore.o gameover.o input.o main.o menu.o print.o refreshpnt.o sinistra.o start_exit.o up.o $(RES)
+LINKOBJ  = crea_lista_pos.o destra.o down.o draw_snake.o fiore.o gameover.o input.o main.o menu.o print.o refreshpnt.o sinistra.o start_exit.o up.o $(RES)
+LIBS =  -L"lib"  
+INCS =  -I"include" 
+CXXINCS =  -I"lib/gcc/mingw32/3.4.2/include"  -I"include/c++/3.4.2/backward"  -I"include/c++/3.4.2/mingw32"  -I"include/c++/3.4.2"  -I"include" 
+BIN  = snake.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before snake.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "snake.exe" $(LIBS)
+
+crea_lista_pos.o: crea_lista_pos.c
+	$(CC) -c crea_lista_pos.c -o crea_lista_pos.o $(CFLAGS)
+
+destra.o: destra.c
+	$(CC) -c destra.c -o destra.o $(CFLAGS)
+
+down.o: down.c
+	$(CC) -c down.c -o down.o $(CFLAGS)
+
+draw_snake.o: draw_snake.c
+	$(CC) -c draw_snake.c -o draw_snake.o $(CFLAGS)
+
+fiore.o: fiore.c
+	$(CC) -c fiore.c -o fiore.o $(CFLAGS)
+
+gameover.o: gameover.c
+	$(CC) -c gameover.c -o gameover.o $(CFLAGS)
+
+input.o: input.c
+	$(CC) -c input.c -o input.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+menu.o: menu.c
+	$(CC) -c menu.c -o menu.o $(CFLAGS)
+
+print.o: print.c
+	$(CC) -c print.c -o print.o $(CFLAGS)
+
+refreshpnt.o: refreshpnt.c
+	$(CC) -c refreshpnt.c -o refreshpnt.o $(CFLAGS)
+
+sinistra.o: sinistra.c
+	$(CC) -c sinistra.c -o sinistra.o $(CFLAGS)
+
+start_exit.o: start_exit.c
+	$(CC) -c start_exit.c -o start_exit.o $(CFLAGS)
+
+up.o: up.c
+	$(CC) -c up.c -o up.o $(CFLAGS)
